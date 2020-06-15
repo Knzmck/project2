@@ -1,5 +1,5 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "handlebars-boilerplate",
   "version": "1.0.0",
   "description": "Project 2 Starter",
   "main": "server.js",
@@ -44,5 +44,14 @@
       "prettier-standard --lint",
       "git add"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Knzmck/project2.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Knzmck/project2/issues"
+  },
+  "homepage": "https://github.com/Knzmck/project2#readme"
 }
