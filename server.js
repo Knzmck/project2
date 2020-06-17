@@ -28,9 +28,6 @@ app.engine(
 );
 app.set('view engine', 'handlebars');
 
-// Routes
-app.use(routes);
-
 const syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
@@ -38,6 +35,10 @@ const syncOptions = { force: false };
 if (process.env.NODE_ENV === 'test') {
   syncOptions.force = true;
 }
+// Routes
+// app.use(routes);
+require("./routes/apiRoutes")(app);
+// require("./routes/userRoutes")(app);
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(() => {
@@ -49,5 +50,6 @@ db.sequelize.sync(syncOptions).then(() => {
     );
   });
 });
+
 
 module.exports = app;
