@@ -1,6 +1,5 @@
 const Router = require('express').Router;
 const db = require('../models');
-
 const htmlRoutes = new Router();
 
 htmlRoutes.get('/', async (req, res) => {
