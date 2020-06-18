@@ -10,11 +10,17 @@ module.exports = apiRoutes;
 
 // Requiring our models
 var db = require("../models");
+var passport = require("../config/passport");
 
 module.exports = function(app) {
+
+  // app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  //   res.json(req.user);
+  // });
+
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", function(req, res) {
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
     db.User.findOne({
       where:{email: req.body.email}
     })
