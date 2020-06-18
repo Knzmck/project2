@@ -10,13 +10,9 @@ const morgan = require('morgan');
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
-
-
-const routes = require('./routes');
-const db = require('./models');
-
 const app = express();
 const PORT = process.env.PORT || 8080;
+const db = require('./models');
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -46,7 +42,7 @@ if (process.env.NODE_ENV === 'test') {
   syncOptions.force = true;
 }
 // Routes
-// app.use(routes);
+require("./routes/htmlRoutes")(app);
 require("./routes/apiRoutes")(app);
 
 // Starting the server, syncing our models ------------------------------------/
