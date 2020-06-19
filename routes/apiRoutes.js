@@ -13,26 +13,11 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function(app) {
-
+// Login
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json(req.user);
   });
 
-  // If the user has valid login credentials, send them to the members page.
-  // Otherwise the user will be sent an error
-  // app.post("/api/login", passport.authenticate("local"), function(req, res) {
-  //   db.User.findOne({
-  //     where:{email: req.body.email}
-  //   })
-  //     .then(function(data) {
-  //       // res.redirect(307, "/api/login");
-  //       res.json(data);
-  //     })
-  //     .catch(function(err) {
-  //       res.status(401).json(err);
-  //     });
-    
-  // });
 // Finds all usernames and info
 app.get("/api/getall", function(req, res) {
   db.User.findAll().then(function(results){
@@ -76,5 +61,15 @@ app.get("/api/getall", function(req, res) {
       });
     }
   });
+  app.post("/api/addGroup", (req,res) => {
+    console.log(req.body)
+    db.Group.create({
+      name: req.body.name,
+      description: req.body.description
+    })
+    .then(() => {
+      res.end();
+    })
+  })
 };
 
