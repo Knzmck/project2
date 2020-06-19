@@ -9,6 +9,7 @@ const {
 const morgan = require('morgan');
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
+const routes = require('./routes');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -23,6 +24,7 @@ app.use(morgan('dev'));
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 // Handlebars
 app.engine(
@@ -42,8 +44,7 @@ if (process.env.NODE_ENV === 'test') {
   syncOptions.force = true;
 }
 // Routes
-require("./routes/htmlRoutes")(app);
-require("./routes/apiRoutes")(app);
+app.use(routes);
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(() => {

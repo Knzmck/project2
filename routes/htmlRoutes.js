@@ -40,7 +40,7 @@ app.get('/example/:id', async (req, res) => {
 
 // Render 404 page for any unmatched routes
 app.get('*', async (req, res) => {
-  console.log("I am the * 404 route")
+  console.log("I am the * 404 route");
   res.render('404');
 
 });

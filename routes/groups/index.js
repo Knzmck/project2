@@ -1,24 +1,24 @@
 const Router = require('express').Router;
-const { Example } = require('../../models');
+const { Group } = require('../../models');
 
-const exampleRoutes = Router();
+const groupRoutes = Router();
 
 // Get all examples
-exampleRoutes
+groupRoutes
   .route('/')
 
   .get(async (_req, res) => {
-    const dbExamples = await Example.findAll();
-    res.json(dbExamples);
+    const dbGroups = await Group.findAll();
+    res.json(dbGroups);
   })
 
   .post(async (req, res) => {
-    const dbExample = await Example.create(req.body);
-    res.json(dbExample);
+    const dbGroup = await Group.create(req.body);
+    res.json(dbGroup);
   });
 
-// Delete an example by id
-exampleRoutes
+// Delete an Group by id
+groupRoutes
   .route('/:id')
   .put(async (_req, res) => {
     res.status(501).end();
@@ -33,4 +33,4 @@ exampleRoutes
     res.json(dbExample);
   });
 
-module.exports = exampleRoutes;
+module.exports = groupRoutes;
