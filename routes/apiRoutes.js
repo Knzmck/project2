@@ -6,3 +6,4 @@ const apiRoutes = Router();
 apiRoutes.use('/groups', groupRoutes);
 
 module.exports = apiRoutes;
+
