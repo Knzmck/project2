@@ -12,9 +12,13 @@ module.exports = function (sequelize, DataTypes) {
     });
     Post.associate = function (models) {
         Post.belongsTo(models.Group, {
+            // Foreign key is group ID. Must include in Frontend JS
             foreignKey: {
                 allowNull: false
             }
+        });
+        Post.hasMany(models.Feedback, {
+            onDelete: "cascade"
         });
     };
 

@@ -13,8 +13,8 @@ groupRoutes
   })
 
   .post(async (req, res) => {
-    const dbGroup = await Group.create(req.body);
-    res.json(dbGroup);
+    const dbGroups = await Group.create(req.body);
+    res.json(dbGroups);
   });
 
 // Delete an Group by id
