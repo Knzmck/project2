@@ -1,23 +1,33 @@
+{{!-- HOMEPAGE Display Greeting --}}
 <div id="home">
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
+        {{!--Greeting "Hello User" message --}}
         <h1>{{msg}}</h1>
+        {{!-- Title for group changing --}}
         <h2>Choose the group you would like to join!</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="group-text">Example Text</label>
             <input type="text" id="group-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
           </div>
-          
+          {{!--Group List--}}
         <h3>Groups:</h3>
         <ul id="group-list" class="list-group">
+          {{!-- List of Groups W/GroupName-Author-date --}}
+          {{!-- Individual Group info will all link to same place
+          whether the user clicks on name,date or author will be a link to the groups template with info from the table --}}
           {{#each groups}}
           <li data-id="{{this.id}}" class="list-group-item">
             <a href="group/{{this.id}}">{{this.groupName}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
+            
           </li>
           {{/each}}
+          
+            {{!--under the group list is a Create-Group-button --}}
+            {{!-- Create group button will open a modul to render new group --}}
+            {{!-- Create group button will ask 4 simple questions --}}
         </ul>
       </div>
     </div>

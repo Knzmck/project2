@@ -1,7 +1,16 @@
-const Router = require('express').Router;
-const { Example } = require('../../models');
+// const Router = require('express').Router;
+// const { Example } = require('../../models');
 
-const exampleRoutes = Router();
+// const exampleRoutes = Router();
+const express= require("express");
+const router = express.Router();
+router.get("/",(req, res)=>{
+  res.send('Login')
+})
+
+router.get("/",(req, res)=>{
+  res.send('Login')
+})
 
 // Get all examples
 exampleRoutes
@@ -33,4 +42,4 @@ exampleRoutes
     res.json(dbExample);
   });
 
-module.exports = exampleRoutes;
+module.exports = router;

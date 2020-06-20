@@ -1,19 +1,32 @@
+{{!-- After user clicks link to enter group this is the group page --}}
 <div class="container">
   <div class="row">
     <div class="col-8 offset-2">
       <div class="card mt-4">
         <div class="card-body">
+          {{!-- Button to User send back to Groups --}}
+            <a href="/">← Back To Groups</a>
+{{!-- variable to connect to a db = AuthorsName,GroupTitle,UserContent,GroupDate,MemberCount, groupPost --}}
+          {{!-- Group page will display the  AuthorsName = Authors name, Amount of content inside = total number of posts in group
+          groupDate= Date the group was created. memberCount = Total number of members, GroupPost = post inside this group --}}
+          
           <h5 class="card-title">{{this.name}}</h5> 
-          <p>
+          <p>{{!-- Author of group is owner --}}
             <strong>Owner</strong>: {{this.owner}}</p>
           <p>
-          <p>
+          <p>{{!-- Members Count --}}
             <strong>Members</strong>: {{this.members-num}}</p>
           <p>
+            {{!-- Description of the group --}}
             <strong>Description:</strong> {{this.description}}</p>
+            
+            {{!-- Lists of post in group either a single line format or with individual squares similar to pintrest(each individual content gets it's own square 
+            with padding to take up space.) --}}
+            {{!--Either a straight list starting from top to bottom or 2 colums across and multiple rows down --}}
           <p>
             {{this.posts}}</p>
-            <a href="/">← Back To Home</a>
+            {{!-- Button to User send back to Groups --}}
+            <a href="/">← Back To Groups</a>
         </div>
       </div>
     </div>
