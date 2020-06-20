@@ -11,10 +11,10 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         }
     });
+    Group.associate = function (models) {
+        Group.hasMany(models.Post, {
+            onDelete: "cascade"
+        })
+    }
     return Group;
-    // Group.associate = function (_models) {
-    //     Group.hasMany(models.User, {
-
-    //     });
-    // }
 };

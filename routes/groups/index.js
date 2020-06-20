@@ -2,7 +2,6 @@ const Router = require('express').Router;
 const { Group } = require('../../models');
 
 const groupRoutes = Router();
->>>>>>> kenzie:routes/groups/index.js
 
 // Get all examples
 groupRoutes
