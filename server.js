@@ -10,7 +10,6 @@ const morgan = require('morgan');
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 const routes = require('./routes');
->>>>>>> kenzie
 
 const app = express();
 const PORT = process.env.PORT || 8080;
