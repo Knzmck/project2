@@ -1,0 +1,36 @@
+const Router = require('express').Router;
+const { Group } = require('../../models');
+
+const groupRoutes = Router();
+>>>>>>> kenzie:routes/groups/index.js
+
+// Get all examples
+groupRoutes
+  .route('/')
+
+  .get(async (_req, res) => {
+    const dbGroups = await Group.findAll();
+    res.json(dbGroups);
+  })
+
+  .post(async (req, res) => {
+    const dbGroup = await Group.create(req.body);
+    res.json(dbGroup);
+  });
+
+// Delete an Group by id
+groupRoutes
+  .route('/:id')
+  .put(async (_req, res) => {
+    res.status(501).end();
+  })
+  .delete(async (req, res) => {
+    const options = {
+      where: {
+        id: req.params.id
+      }
+    };
+    const dbExample = await Example.destroy(options);
+    res.json(dbExample);
+  });
+module.exports = groupRoutes;

@@ -8,7 +8,9 @@ const {
 } = require('@handlebars/allow-prototype-access');
 const morgan = require('morgan');
 // Requiring passport as we've configured it
-var passport = require('./config/passport');
+var passport = require("./config/passport");
+const routes = require('./routes');
+>>>>>>> kenzie
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -26,7 +28,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Handlebars--------------------
+// Handlebars
 app.engine(
   'handlebars',
   exphbs({
@@ -47,8 +49,7 @@ if (process.env.NODE_ENV === 'test') {
   syncOptions.force = true;
 }
 // Routes
-require('./routes/htmlRoutes')(app);
-require('./routes/apiRoutes')(app);
+app.use(routes);
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(() => {
