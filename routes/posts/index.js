@@ -1,5 +1,6 @@
 const Router = require('express').Router;
 const { Post } = require('../../models');
+const { col } = require('sequelize');
 
 const postRoutes = Router();
 
@@ -13,7 +14,8 @@ postRoutes
   })
 
   .post(async (req, res) => {
-    const dbPost = await Post.create(req.body);
+      console.log(req.body)
+    const dbPosts = await Post.create(req.body);
     res.json(dbPosts);
   });
 
