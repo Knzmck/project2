@@ -29,7 +29,7 @@ groupRoutes
         id: req.params.id
       }
     };
-    const dbExample = await Example.destroy(options);
-    res.json(dbExample);
+    const dbGroup = await Group.destroy(options);
+    res.json(dbGroup);
   });
 module.exports = groupRoutes;
