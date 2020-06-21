@@ -1,6 +1,6 @@
 const Router = require('express').Router;
 const groupRoutes = require('./groups');
-const postRoutes = require('./posts')
+const postRoutes = require('./posts');
 const feedbackRoutes = require('./feedback');
 
 const apiRoutes = Router();
