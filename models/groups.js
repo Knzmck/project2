@@ -15,6 +15,11 @@ module.exports = function (sequelize, DataTypes) {
         Group.hasMany(models.Post, {
             onDelete: "cascade"
         })
+        Group.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        })
     }
     return Group;
 };
