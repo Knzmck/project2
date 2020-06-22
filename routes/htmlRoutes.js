@@ -8,6 +8,7 @@ htmlRoutes.get('/', async (req, res) => {
   const dbGroups = await db.Group.findAll({});
 
   res.render('index', {
+    // You can render any other information here
     msg: 'Welcome to the HomePage!',
     Groups: dbGroups
   });
@@ -23,7 +24,7 @@ htmlRoutes.get('/group/:id', async (req, res) => {
   };
 
   const dbGroups = await db.Group.findOne(contentOptions);
-  // reference to handlebars page
+  // reference to specific handlebars page referring to group id above
   res.render('group', {
     group: dbGroups
   });
