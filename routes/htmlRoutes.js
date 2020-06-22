@@ -42,17 +42,25 @@ htmlRoutes.get('/signup', async (req,res) => {
 
 
 // Render Group page with all content for group. For example, 'study group' 
-htmlRoutes.get('/group/:id',isAuthenticated, async (req, res) => {
-  const contentOptions = {
+htmlRoutes.get('/group/:id', async (req, res) => {
+  const groupID = {
     where: {
       id: req.params.id
     }
   };
-
-  const dbGroups = await db.Group.findOne(contentOptions);
+  const dbGroups = await db.Group.findOne(groupID);
+  const dbPosts = await db.Post.findAll({
+    where: {
+      GroupId: req.params.id
+    }
+  })
+  // This is the returned data
+  console.log(dbGroups.toJSON());
+  console.log(dbPosts);
   // reference to specific handlebars page referring to group id above
   res.render('group', {
-    group: dbGroups
+    group: dbGroups,
+    posts: dbPosts
   });
 });
 
