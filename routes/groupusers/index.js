@@ -3,7 +3,7 @@ const { GroupUser } = require('../../models');
 
 const groupUserRoutes = Router();
 
-// Get all Users
+// Get all User and group associations
 groupUserRoutes
   .route('/')
 
@@ -18,7 +18,7 @@ groupUserRoutes
     res.json(dbGroupUser);
   });
 
-// Delete a groupUser by id
+// Delete a groupUser association by id for the associations
 groupUserRoutes
   .route('/:id')
   .put(async (_req, res) => {
@@ -33,4 +33,14 @@ groupUserRoutes
     const dbGroupUser = await GroupUser.destroy(options);
     res.json(dbGroupUser);
   });
+
+  // Route to add user to a group-- route is /api/groupusers/addgroupuser
+  // need to make sure request contains UserId and GroupId
+  groupUserRoutes
+  .route('/addgroupuser')
+
+  .post(async (req, res) => {
+    const dbGroupUser = await GroupUser.create(req.body);
+    res.json(dbGroupUser);
+  })
 module.exports = groupUserRoutes;

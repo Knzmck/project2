@@ -8,23 +8,11 @@ module.exports = function (sequelize, DataTypes) {
     },
     UserId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Users',
-        key: 'UserId'
-      }
+      allowNull: false
     },
     GroupId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Groups',
-        key: 'GroupId'
-      }
-    },
-    // Something to test model with
-    stuff: {
-      type: DataTypes.STRING
+      allowNull: false
     }
   });
   return GroupUser;

@@ -4,7 +4,7 @@ const { col } = require('sequelize');
 
 const postRoutes = Router();
 
-// Get all Posts
+// Get all Posts route is /api/posts
 postRoutes
   .route('/')
 
@@ -19,7 +19,7 @@ postRoutes
     res.json(dbPosts);
   });
 
-// Delete a Post by id
+// Delete a Post by id -- route is /api/posts/id
 postRoutes
   .route('/:id')
   .put(async (_req, res) => {

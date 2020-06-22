@@ -15,11 +15,11 @@ module.exports = function (sequelize, DataTypes) {
         Group.hasMany(models.Post, {
             onDelete: "cascade"
         })
-        Group.belongsToMany(models.User, {
-            through: 'GroupUser',
-            as: 'users',
-            foreignKey: 'GroupId'
-        })
+        // Group.belongsToMany(models.User, {
+        //     through: 'GroupUser',
+        //     as: 'users',
+        //     foreignKey: 'GroupId'
+        // })
     }
     return Group;
 };

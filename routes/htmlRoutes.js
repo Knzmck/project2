@@ -15,7 +15,7 @@ htmlRoutes.get('/', async (req, res) => {
 });
 
 // Route for homepage
-htmlRoutes.get('/homepage', async (req, res) => {
+htmlRoutes.get('/homepage',isAuthenticated, async (req, res) => {
     // Finding all groups to join
     const dbGroups = await db.Group.findAll({});
     // // Find all groups associated with this user
@@ -30,7 +30,6 @@ htmlRoutes.get('/homepage', async (req, res) => {
     });
 })
 
-
 // Route for login page
 htmlRoutes.get('/login', async (req, res) => {
  res.render('login')
@@ -39,6 +38,7 @@ htmlRoutes.get('/login', async (req, res) => {
 htmlRoutes.get('/signup', async (req,res) => {
   res.render('signup')
 })
+
 
 
 // Render Group page with all content for group. For example, 'study group' 

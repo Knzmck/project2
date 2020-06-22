@@ -3,7 +3,7 @@ const { Feedback } = require('../../models');
 
 const feedbackRoutes = Router();
 
-// Get all examples
+// Get all examples -- route is /api/feedback
 feedbackRoutes
   .route('/')
 
@@ -17,7 +17,7 @@ feedbackRoutes
     res.json(dbFeedbacks);
   });
 
-// Delete an Group by id
+// Delete an Group by id -- route is /api/feedback/id
 feedbackRoutes
   .route('/:id')
   .put(async (_req, res) => {
