@@ -20,13 +20,13 @@
           whether the user clicks on name,date or author will be a link to the groups template with info from the table --}}
           {{#each groups}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="group/{{this.id}}">{{this.groupName}}</a>
+            <a href="group/{{this.id}}">{{this.name}}</a>
             
           </li>
           {{/each}}
           
             {{!--under the group list is a Create-Group-button --}}
-            {{!-- Create group button will open a modul to render new group --}}
+            {{!-- Create group button will open a module to render new group --}}
             {{!-- Create group button will ask 4 simple questions --}}
         </ul>
       </div>

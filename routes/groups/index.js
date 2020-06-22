@@ -3,7 +3,7 @@ const { Group } = require('../../models');
 
 const groupRoutes = Router();
 
-// Get all examples
+// Get all examples -- route is /api/groups
 groupRoutes
   .route('/')
 
@@ -17,7 +17,7 @@ groupRoutes
     res.json(dbGroups);
   });
 
-// Delete an Group by id
+// Delete an Group by id -- route is /api/groups/id
 groupRoutes
   .route('/:id')
   .put(async (_req, res) => {
