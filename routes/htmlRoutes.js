@@ -21,6 +21,11 @@ htmlRoutes.get('/', async (req, res) => {
 
 });
 
+// Route for login page
+htmlRoutes.get('/login', async (req, res) => {
+ res.render('login')
+})
+
 
 // Render Group page with all content for 'study group' 
 htmlRoutes.get('/group/:id',isAuthenticated, async (req, res) => {
