@@ -20,7 +20,7 @@
           whether the user clicks on name,date or author will be a link to the groups template with info from the table --}}
           {{#each groups}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="group/{{this.id}}">{{this.groupName}}</a>
+            <a href="group/{{this.id}}">{{this.name}}</a>
             
           </li>
           {{/each}}
