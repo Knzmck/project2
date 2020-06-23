@@ -12,30 +12,43 @@
           <p>Recommended Material: </p>
           <p></p>
           {{!-- <!--{{post.recommended}}--> --}}
-          <p><strong>Topic</strong></p>
+          <p><strong>Topic: {{content.topic}} </strong></p>
           {{!-- <!--{{post.topic}}--> --}}
-          <p><strong>Importance:</strong></p>
-          {{!-- <!--{{post.importance high,medium,low,null}}--> --}}
+
+          {{!-- <p><strong>Importance:</strong></p>
+          <!--{{post.importance high,medium,low,null}}--> --}}
+
           <div id="post-image">
             <img src="/"></img>
             {{!-- <!--{{image.source}}--> --}}
           </div>
-          <p>Author: Name @date @timestamp - Comment about post </p>
+          <p>
+            <li>Author: {{content.authorName}} </li>
+            <li> Created at: {{content.createdAt}} </li>{{content.content}}
+          </p>
           {{!-- <!--{{author.name, @date, @timeStamp, post.content.description}}--> --}}
         </div>
         <div>
           <h2>Comments</h2>
-          {{!-- <!--Customize title of comments...totally a last minute thought--> --}}
+          {{#each feedback}}
           <div style="border-style: solid; border-color: black; height: 150px;">
+            <p>{{this.authorName}}</p>
+            {{!-- If false it will be 0, if true it will be 1 --}}
+            <li> {{this.helpful}}</li>
+            <li> {{this.comment}}</li>
+            <li> {{this.createdAt}}</li>
+            <li> {{this.postId}}</li>
+          {{!-- <!--Customize title of comments...totally a last minute thought--> --}}
             <div>
               <p>@date @timestamp <strong>group-attendee</strong>: Comment Here </p>
             </div>
             {{!-- <!--{{image.source}}--> --}}
-          </div>
         </div>
-        <a href="/">← Back To Home</a>
+        {{/each}}
       </div>
+      <a href="/">← Back To Home</a>
     </div>
   </div>
+</div>
 </div>
 </div>

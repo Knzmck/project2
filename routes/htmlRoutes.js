@@ -82,11 +82,18 @@ htmlRoutes.get('/post/:id', async (req, res) => {
   };
 
   const dbPosts = await db.Post.findOne(Post);
+  const dbFeedback = await db.Feedback.findAll({
+    where: {
+      PostId: req.params.id
+    }
+  })
   // reference to specific handlebars page referring to group id above
   res.render('content', {
-    content: dbPosts
+    content: dbPosts,
+    feedback: dbFeedback
   });
   console.log(dbPosts);
+  console.log(dbFeedback)
 });
 
 module.exports = htmlRoutes;
