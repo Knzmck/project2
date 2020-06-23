@@ -26,10 +26,16 @@
           <p>
             {{this.posts}}</p>
             {{!-- Button to User send back to Groups --}}
-            <a href="/">← Back To Groups</a>
+            <button id="home-button" >← Back To Groups</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
+<script>
+  //THIS STILL NEEDS ROUTED
+var groupButton = document.getElementById('home-button');
+homeButton.onclick = function() {
+  location.assign('/views/index');
+}
+</script>
