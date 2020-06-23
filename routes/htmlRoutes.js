@@ -67,19 +67,20 @@ htmlRoutes.get('/group/:id', async (req, res) => {
 
 
 // Render content page for specific resource(aka post) within group using group ID in route
-// htmlRoutes.get('/post/:id', async (req, res) => {
-//   const groupPosts = {
-//     where: {
-//       GroupId: req.params.id
-//     }
-//   };
+htmlRoutes.get('/post/:id', async (req, res) => {
+  const Post = {
+    where: {
+      id: req.params.id
+    }
+  };
 
-//   const dbPosts = await db.Post.find(groupPosts);
-//   // reference to specific handlebars page referring to group id above
-//   // res.render('content', {
-//   //   content: dbPosts
-//   // });
-//   res.send(dbPosts)
-// });
+  const dbPosts = await db.Post.findOne(Post);
+  // reference to specific handlebars page referring to group id above
+  // res.render('content', {
+  //   content: dbPosts
+  // });
+  // res.send(dbPosts)
+  console.log(dbPosts);
+});
 
 module.exports = htmlRoutes;

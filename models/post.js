@@ -20,6 +20,11 @@ module.exports = function (sequelize, DataTypes) {
         Post.hasMany(models.Feedback, {
             onDelete: "cascade"
         });
+        Post.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        })
     };
     return Post;
 };
