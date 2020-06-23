@@ -53,14 +53,21 @@ htmlRoutes.get('/group/:id', async (req, res) => {
     where: {
       GroupId: req.params.id
     }
-  })
+  });
+  const dbMembers = await db.GroupUser.findAll({
+    where: {
+      GroupId: req.params.id
+    }
+  });
   // This is the returned data
   console.log(dbGroups.toJSON());
   console.log(dbPosts);
+  console.log(dbMembers);
   // reference to specific handlebars page referring to group id above
   res.render('group', {
     group: dbGroups,
-    posts: dbPosts
+    posts: dbPosts,
+    members: dbMembers
   });
 });
 
