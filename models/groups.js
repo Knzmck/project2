@@ -11,15 +11,10 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         }
     });
-    Group.associate = function (models) {
+    Group.associate = (models) => {
         Group.hasMany(models.Post, {
             onDelete: "cascade"
         })
-        // Group.belongsToMany(models.User, {
-        //     through: 'GroupUser',
-        //     as: 'users',
-        //     foreignKey: 'GroupId'
-        // })
     }
     return Group;
 };

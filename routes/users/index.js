@@ -50,7 +50,7 @@ userRoutes
   const dbUsers = await User.findOne(id);
   res.json(dbUsers);
 })
-// API ROUTE TO SIGN UP
+// API ROUTE TO SIGN UP -- route is /api/users/signup
 userRoutes
 .route('/signup')
 
@@ -59,5 +59,23 @@ userRoutes
 const dbUsers = await User.create(req.body);
 res.json(dbUsers);
 });
+
+// API route to get the user's data who is logged in. Will be useful for making posts. Route is -- /api/users/user_data
+userRoutes
+.route('/user_data')
+
+.get(async (req,res) => {
+  if (!req.user) {
+    // The user is not logged in, send back an empty object
+    res.json({});
+  } else {
+    // Otherwise send back the user's email and id
+    // Sending back a password, even a hashed password, isn't a good idea
+    res.json({
+      email: req.user.email,
+      id: req.user.id
+    });
+  }
+})
 
 module.exports = userRoutes;

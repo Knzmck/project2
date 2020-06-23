@@ -1,10 +1,16 @@
 'use strict';
 module.exports = function (sequelize, DataTypes) {
     const Post = sequelize.define("Post", {
+        // AKA title of post
         name: {
             type: DataTypes.STRING,
             allowNull: false
         },
+        // set user id in post here
+        UserId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+          },
         content: {
             type: DataTypes.STRING,
             allowNull: false

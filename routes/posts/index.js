@@ -14,7 +14,7 @@ postRoutes
   })
 
   .post(async (req, res) => {
-      console.log(req.body)
+    console.log(req.body)
     const dbPosts = await Post.create(req.body);
     res.json(dbPosts);
   });
@@ -34,4 +34,14 @@ postRoutes
     const dbPost = await Post.destroy(options);
     res.json(dbPost);
   });
+
+  // Route to create new post 
+postRoutes
+  .route('/newpost')
+  .post(async (req, res) => {
+    console.log(req.body)
+    const dbPosts = await Post.create(req.body);
+    res.json(dbPosts);
+  });
+
 module.exports = postRoutes;

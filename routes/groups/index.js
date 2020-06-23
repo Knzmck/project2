@@ -11,7 +11,7 @@ groupRoutes
     const dbGroups = await Group.findAll();
     res.json(dbGroups);
   })
-
+// create a new group
   .post(async (req, res) => {
     const dbGroups = await Group.create(req.body);
     res.json(dbGroups);
