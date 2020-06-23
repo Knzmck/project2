@@ -76,10 +76,9 @@ htmlRoutes.get('/post/:id', async (req, res) => {
 
   const dbPosts = await db.Post.findOne(Post);
   // reference to specific handlebars page referring to group id above
-  // res.render('content', {
-  //   content: dbPosts
-  // });
-  // res.send(dbPosts)
+  res.render('content', {
+    content: dbPosts
+  });
   console.log(dbPosts);
 });
 
