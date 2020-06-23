@@ -50,7 +50,7 @@ userRoutes
   const dbUsers = await User.findOne(id);
   res.json(dbUsers);
 })
-// API ROUTE TO SIGN UP
+// API ROUTE TO SIGN UP -- route is /api/users/signup
 userRoutes
 .route('/signup')
 
