@@ -6,7 +6,7 @@ $(document).ready(function () {
   const $submitBtn = $('#submit');
   const $exampleList = $('#example-list');
   const $createBtn = $('#create-button');
-
+  const $createpostBtn = $('#createpost-button');
 
   // The API object contains methods for each kind of request we'll make
   const API = {
@@ -99,39 +99,85 @@ $(document).ready(function () {
   };
 
   // Add event listeners to the submit and delete buttons
-
-
   $exampleList.on('click', '.delete', handleDeleteBtnClick);
 
   //Creating event for group creation button
   // When the createGroup button is clicked, eventually validate the name and description are not blank
-
   var groupName = $('#groupName');
   var groupDescription = $('#groupDescription');
+
+  var postTitle = $("#postTitle");
+  var postAuthor = $("#authorName");
+  var postTopic = $("#postTopic");
+  var postContent = $("#postContent");
 
 
   function createGroup(event) {
     event.preventDefault();
-
     var groupData = {
       name: groupName.val().trim(),
       description: groupDescription.val().trim()
     };
-    console.log(groupData);
-    // if (!groupData.name || !groupData.password) {
-    //   return;
-    // }
-    
+
+
+    createGroupAPI(groupData.name, groupData.description);
+    groupName.val('');
+    groupDescription.val('');
+    //Page will reload on every additional group added
+    location.reload();
+  }
+
+
+
+  // if (!groupData.name || !groupData.password) {
+  //   return;
+  // }
+
   //create function "create group " w/ the API call
 
   function createGroupAPI(groupName, groupDescription) {
     $.post('/api/groups', {
       name: groupName,
       description: groupDescription
-    }).then(function (data) {
-      console.log(data);
-    });
-  }
-  $createBtn.on('click', createGroup);
-});
+    })
+    //.then(function (data) {
 
+    // })
+  }
+  function createPost(event) {
+    event.preventDefault();
+    var postData = {
+      title: postTitle.val().trim(),
+      authorName: postAuthor.val().trim(),
+      topic: postTopic.val().trim(),
+      content: postContent.val().trim(),
+    };
+    console.log(postData);
+    createPostAPI(postData.title, postData.authorName, postData.topic, postData.content);
+    //values for 
+    groupName.val('');
+    groupDescription.val('');
+    //Page will reload on every additional post created for viewing
+    location.reload();
+  }
+
+
+
+
+
+
+  //create function "create post" w/ the API call
+  function createPostAPI(groupTitle, authorName, topic) {
+    $.post('/api/groups', {
+      name: postName,
+      description: groupDescription
+    })
+    //.then(function (data) {
+
+    // })
+  }
+
+  $createBtn.on('click', createGroup);
+  $createPostBtn.on("click", createPost)
+
+});
