@@ -28,12 +28,23 @@
             <a href="group/{{this.id}}">{{this.name}}</a>
             <p>{{this.content}}</p>
           </li>
+
           {{/each}}
+          {{!-- This is an example post --}}
+          <button>Create Post</button>
+          {{!-- This will be the div with the posts inside. Mobile responsive and side by side--}}
+          <div style="border-style:solid">
+          <h1>Hey SpaceFam!</h1>
+
+          <p> Welcome to the group if you have any questions just ask! </p>
+          <button id="commentBtn">Comment</button><button id="likeBtn">Like</button>
+          </div>
             {{!-- Button to User send back to Groups --}}
-            <a href="/">← Back To Home</a>
+            {{!-- <a href="/">← Back To Home</a> --}}
         </div>
       </div>
     </div>
   </div>
 </div>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/groups.js"></script>
