@@ -1,19 +1,20 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "database_development",
+    "password": "password" ,
+    "database": "squidstack_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "password",
     "database": "testdb",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "PLACE_DB_ENV_HERE"
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
   }
 }
