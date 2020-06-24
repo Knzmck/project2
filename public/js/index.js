@@ -7,6 +7,7 @@ $(document).ready(function () {
   const $exampleList = $('#example-list');
   const $createBtn = $('#create-button');
 
+
   // The API object contains methods for each kind of request we'll make
   const API = {
     saveExample: function (example) {
@@ -88,7 +89,9 @@ $(document).ready(function () {
   // handleDeleteBtnClick is called when an example's delete button is clicked
   // Remove the example from the db and refresh the list
   const handleDeleteBtnClick = function () {
+
     const idToDelete = $(this).parent().attr('data-id');
+
 
     API.deleteExample(idToDelete).then(function () {
       refreshExamples();
@@ -97,12 +100,15 @@ $(document).ready(function () {
 
   // Add event listeners to the submit and delete buttons
 
+
   $exampleList.on('click', '.delete', handleDeleteBtnClick);
 
   //Creating event for group creation button
   // When the createGroup button is clicked, eventually validate the name and description are not blank
+
   var groupName = $('#groupName');
   var groupDescription = $('#groupDescription');
+
 
   function createGroup(event) {
     event.preventDefault();
@@ -115,12 +121,7 @@ $(document).ready(function () {
     // if (!groupData.name || !groupData.password) {
     //   return;
     // }
-    // If we have an group and descritpion, run the signUpUser function
-    createGroupAPI(groupData.name, groupData.description);
-    groupName.val('');
-    groupDescription.val('');
-  }
-
+    
   //create function "create group " w/ the API call
 
   function createGroupAPI(groupName, groupDescription) {
@@ -133,3 +134,4 @@ $(document).ready(function () {
   }
   $createBtn.on('click', createGroup);
 });
+
