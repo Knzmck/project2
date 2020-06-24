@@ -5,12 +5,12 @@
       <div class="card mt-4">
         <div class="card-body">
           {{!-- Button to User send back to Groups --}}
-            <a href="/">← Back To Groups</a>
-{{!-- variable to connect to a db = AuthorsName,GroupTitle,UserContent,GroupDate,MemberCount, groupPost --}}
+          <a href="/">← Back To Groups</a>
+          {{!-- variable to connect to a db = AuthorsName,GroupTitle,UserContent,GroupDate,MemberCount, groupPost --}}
           {{!-- Group page will display the  AuthorsName = Authors name, Amount of content inside = total number of posts in group
           groupDate= Date the group was created. memberCount = Total number of members, GroupPost = post inside this group --}}
-          
-          <h5 class="card-title">{{group.name}}</h5> 
+
+          <h5 class="card-title">{{group.name}}</h5>
           {{!-- <p>Author of group is owner
             <strong>Owner</strong>: {{this.owner}}</p>
           <p> --}}
@@ -19,26 +19,51 @@
           <p>
             {{!-- Description of the group --}}
             <strong>Description:</strong> {{group.description}}</p>
-            
-            {{!-- Lists of post in group either a single line format or with individual squares similar to pintrest(each individual content gets it's own square 
+
+          {{!-- Lists of post in group either a single line format or with individual squares similar to pintrest(each individual content gets it's own square 
             with padding to take up space.) --}}
-            {{!--Either a straight list starting from top to bottom or 2 colums across and multiple rows down --}}
-          {{#each posts}}
-          <li data-id="{{this.id}}" class="list-post-item">
-            <a href="group/{{this.id}}">{{this.name}}</a>
-            <p>{{this.content}}</p>
-          </li>
+          {{!--Either a straight list starting from top to bottom or 2 colums across and multiple rows down --}}
+          <h3>Create your own Post:</h3>
+          {{!-- Form for group create --}}
+          <form id="create-button-group" class="clearfix mb-4" action="POST">
+            <div class="form-group">
 
-          {{/each}}
-          {{!-- This is an example post --}}
-          <button>Create Post</button>
-          {{!-- This will be the div with the posts inside. Mobile responsive and side by side--}}
-          <div style="border-style:solid">
-          <h1>Hey SpaceFam!</h1>
+              <label for="postTitle">Post Title</label>
+              <input type="text" id="postTitle" class="form-control" aria-describedby="example-text"
+                placeholder="Post Title">
 
-          <p> Welcome to the group if you have any questions just ask! </p>
-          <button id="commentBtn">Comment</button><button id="likeBtn">Like</button>
-          </div>
+
+              <label for="postAuthor">Post Author:</label>
+              <input type="text" id="postAuthor" class="form-control" aria-describedby="example-text"
+                placeholder="Author Name">
+
+              <label for="postTopic">Post Topic:</label>
+              <input type="text" id="postTopic" class="form-control" aria-describedby="example-text"
+                placeholder="Post Topic">
+
+              <label for="postContent">Post Content:</label>
+              <input type="text" id="postContent" class="form-control" aria-describedby="example-text"
+                placeholder="Post Content">
+
+
+              <button type="submit" id="createPost-button" style="background-color: green;">Create</button>
+            </div>
+            {{#each posts}}
+            <li data-id="{{this.id}}" class="list-post-item">
+              <a href="group/{{this.id}}">{{this.name}}</a>
+              <p>{{this.content}}</p>
+            </li>
+
+            {{/each}}
+            {{!-- This is an example post --}}
+            <button>Create Post</button>
+            {{!-- This will be the div with the posts inside. Mobile responsive and side by side--}}
+            <div style="border-style:solid">
+              <h1>Hey SpaceFam!</h1>
+
+              <p> Welcome to the group if you have any questions just ask! </p>
+              <button id="commentBtn">Comment</button><button id="likeBtn">Like</button>
+            </div>
             {{!-- Button to User send back to Groups --}}
             {{!-- <a href="/">← Back To Home</a> --}}
         </div>
