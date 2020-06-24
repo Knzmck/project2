@@ -17,7 +17,6 @@
     "orm:migrate:reset": "sequelize db:migrate:undo:all && npm run orm:migrate",
     "orm:seed": "sequelize db:seed:all",
     "precommit": "lint-staged",
-    "prestart": "sequelize db:create && npm run orm:migrate",
     "pretest": "cross-env NODE_ENV=test npm run orm:migrate:reset"
   },
   "license": "ISC",
