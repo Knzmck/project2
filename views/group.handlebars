@@ -24,10 +24,15 @@
           {{!-- Lists of post in group either a single line format or with individual squares similar to pintrest(each individual content gets it's own square (padding to take up space.) --}}
           {{!--Either a straight list starting from top to bottom or 2 colums across and multiple rows down --}}
           <h3>Create your own Post:</h3>
+          {{!-- <p>{{group.id}} hello</p> --}}
           {{!-- Form for group create --}}
-          <form id="create-button-group" class="clearfix mb-4" action="../public/js/index.js" method="POST">
+          <form id="create-button-group" class="clearfix mb-4"  method="POST">
+              
+              <div class="form-group">
 
-            <div class="form-group">
+              
+              <input type="number" id="postGroupID" class="form-control" placeholder="Group ID" value={{{group.id}}} readonly >
+              {{!-- value={{group.id}} readonly --}}
 
               <label for="postTitle">Post Title</label>
               <input type="text" id="postTitle" class="form-control" placeholder="Post Title">
@@ -38,14 +43,12 @@
               <label for="postTopic">Post Topic:</label>
               <input type="text" id="postTopic" class="form-control" placeholder="Post Topic">
 
+              <input type="number" id="postId" class="form-control" placeholder="Post ID" >
+              {{!-- value={{ groupUser.UserId}} readonly --}}
+
               <label for="postContent">Post Content:</label>
               <input type="text" id="postContent" class="form-control" placeholder="Post Content">
-
-              {{!-- <label for="postContent">User ID:</label>
-              <input type="text" id="postContent" class="form-control" placeholder="User ID">
-              <label for="postContent">Group ID:</label>
-              <input type="text" id="postContent" class="form-control" placeholder="Post Content"> --}}
-
+              
               <button type="submit" id="createPost-button" style="background-color: green;">Create</button>
             </div>
           </form>
