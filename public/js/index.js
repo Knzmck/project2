@@ -6,7 +6,7 @@ $(document).ready(function () {
   const $submitBtn = $('#submit');
   const $exampleList = $('#example-list');
   const $createBtn = $('#create-button');
-  const $createpostBtn = $('#createpost-button');
+  const $createPostBtn = $('#createpost-button');
 
   // The API object contains methods for each kind of request we'll make
   const API = {
@@ -106,14 +106,12 @@ $(document).ready(function () {
   var groupName = $('#groupName');
   var groupDescription = $('#groupDescription');
 
-  var postTitle = $("#postTitle");
-  var postAuthor = $("#authorName");
-  var postTopic = $("#postTopic");
-  var postContent = $("#postContent");
+
 
 
   function createGroup(event) {
     event.preventDefault();
+
     var groupData = {
       name: groupName.val().trim(),
       description: groupDescription.val().trim()
@@ -144,6 +142,11 @@ $(document).ready(function () {
 
     // })
   }
+  var postTitle = $("#postTitle");
+  var postAuthor = $("#authorName");
+  var postTopic = $("#postTopic");
+  var postContent = $("#postContent");
+
   function createPost(event) {
     event.preventDefault();
     var postData = {
@@ -152,24 +155,28 @@ $(document).ready(function () {
       topic: postTopic.val().trim(),
       content: postContent.val().trim(),
     };
+
     console.log(postData);
+
     createPostAPI(postData.title, postData.authorName, postData.topic, postData.content);
-    //values for 
-    groupName.val('');
-    groupDescription.val('');
+    // Clear the text box values 
+    postTitle.val('');
+    postAuthor.val('');
+    postTopic.val('');
+    postContent.val('');
+
     //Page will reload on every additional post created for viewing
     location.reload();
   }
 
-
-
-
-
-
   //create function "create post" w/ the API call
-  function createPostAPI(groupTitle, authorName, topic) {
-    $.post('/api/groups', {
-      name: postName,
+  function createPostAPI(postTitle, authorName, topic,) {
+    $.post('/api/posts', {
+      postTitle,
+      authorName,
+      topic,
+      postContent,
+
       description: groupDescription
     })
     //.then(function (data) {
