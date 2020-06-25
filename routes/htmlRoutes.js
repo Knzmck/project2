@@ -92,8 +92,8 @@ htmlRoutes.get('/post/:id', async (req, res) => {
     content: dbPosts,
     feedback: dbFeedback
   });
-  console.log(dbPosts);
-  console.log(dbFeedback);
+  // console.log(dbPosts);
+  // console.log(dbFeedback);
 });
 
 module.exports = htmlRoutes;

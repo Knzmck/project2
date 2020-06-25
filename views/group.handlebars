@@ -22,11 +22,13 @@
 
           {{!-- Lists of post in group either a single line format or with individual squares similar to pintrest(each individual content gets it's own square (padding to take up space.) --}}
           {{!--Either a straight list starting from top to bottom or 2 colums across and multiple rows down --}}
+
           <h3 class="subtitle">Create your own Post:</h3>
           {{!-- Form for group create --}}
           <form id="create-button-group" class="control" action="../public/js/index.js" method="POST">
 
             <div class="field">
+=======
 
               <label for="postTitle" class="label" >Post Title</label>
               <input type="text" id="postTitle" class="input" placeholder="Post Title">
@@ -37,6 +39,7 @@
               <label for="postTopic" class="label">Post Topic:</label>
               <input type="text" id="postTopic" class="input" placeholder="Post Topic">
 
+
               <label for="postContent" class="label">Post Content:</label>
               <input type="text" id="postContent" class="input" placeholder="Post Content">
 
@@ -46,6 +49,8 @@
               <input type="text" id="postContent" class="form-control" placeholder="Post Content"> --}}
 
               <button type="submit" id="createPost-button" class="button is-medium">Create</button>
+=======
+
             </div>
           </form>
 

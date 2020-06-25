@@ -1,8 +1,9 @@
 $(document).ready(function () {
   // Get references to page elements
-  const $ = window.$;
+
   // const $exampleText = $('#example-text');
   // const $exampleDescription = $('#example-description');
+  const $ = window.$;
   const $submitBtn = $('#submit');
   // const $exampleList = $('#example-list');
   const $createBtn = $('#create-button');
@@ -89,9 +90,7 @@ $(document).ready(function () {
   // handleDeleteBtnClick is called when an example's delete button is clicked
   // Remove the example from the db and refresh the list
   const handleDeleteBtnClick = function () {
-
     const idToDelete = $(this).parent().attr('data-id');
-
 
     API.deleteExample(idToDelete).then(function () {
       refreshExamples();
@@ -105,6 +104,7 @@ $(document).ready(function () {
   // When the createGroup button is clicked, eventually validate the name and description are not blank
   var groupName = $('#groupName');
   var groupDescription = $('#groupDescription');
+
   function createGroup(event) {
     event.preventDefault();
     var groupData = {
@@ -122,50 +122,77 @@ $(document).ready(function () {
     $.post('/api/groups', {
       name: groupName,
       description: groupDescription
-    })
+    });
     //.then(function (data) {
     // })
   }
 
-  var postTitle = $("#postTitle");
-  var postAuthor = $("#authorName");
-  var postTopic = $("#postTopic");
-  var postContent = $("#postContent");
+  var postTitle = $('#postTitle');
+  var postAuthor = $('#authorName');
+  var postTopic = $('#postTopic');
+  var postContent = $('#postContent');
+  var groupId = $('#postGroupId');
+  var postId = $('#postId');
 
   function createPost(event) {
     event.preventDefault();
-
+    console.log('141');
     var postData = {
+      groupId: groupId.val(),
       title: postTitle.val(),
       authorName: postAuthor.val(),
       topic: postTopic.val(),
-      content: postContent.val(),
+      userId: postId.val(),
+      content: postContent.val()
     };
+
     console.log(postData);
 
-    createPostAPI(postData.title, postData.authorName, postData.topic, postData.content);
-    // Clear the text box values 
+    createPostAPI(
+      postData.groupId,
+      postData.title,
+      postData.authorName,
+      postData.topic,
+      postData.userId,
+      postData.content
+    );
+    // Clear the text box values
+    groupId.val('');
     postTitle.val('');
     postAuthor.val('');
     postTopic.val('');
+    postId.val('');
     postContent.val('');
     //Page will reload on every additional post created for viewing
     location.reload();
   }
   //create function "create post" w/ the API call
-  function createPostAPI(postTitle, authorName, topic, content) {
-    $.post('/api/posts', {
-      postTitle,
-      authorName,
-      topic,
-      content,
-      description: groupDescription
-    })
-
+  function createPostAPI(
+    groupId,
+    postTitle,
+    authorName,
+    topic,
+    content,
+    userId
+  ) {
+    $.post('/api/posts/newpost', {
+      postTitle: postTitle,
+      authorName: authorName,
+      topic: topic,
+      userId: userId,
+      content: content,
+      groupId: groupId
+    });
   }
+  
 
+
+// Add event listeners to the submit and delete buttons
+$submitBtn.on('click', handleFormSubmit);
+$exampleList.on('click', '.delete', handleDeleteBtnClick);
   $createBtn.on('click', createGroup);
-  $createPostBtn.on("click", createPost)
+  $createPostBtn.on("click", createPost);
+
 
 });
 
