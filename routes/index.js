@@ -7,4 +7,6 @@ const router = new Router();
 router.use('/api', apiRoutes);
 router.use('', htmlRoutes);
 
+
+
 module.exports = router;
