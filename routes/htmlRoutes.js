@@ -15,27 +15,27 @@ htmlRoutes.get('/', async (req, res) => {
 });
 
 // Route for homepage
-htmlRoutes.get('/homepage',isAuthenticated, async (req, res) => {
-    // Finding all groups to join
-    const dbGroups = await db.Group.findAll({});
-    // // Find all groups associated with this user
-    // const dbUserGroup = await db.GroupUser.findAll({
-    //   where: req.user.id
-    // })
+htmlRoutes.get('/homepage', isAuthenticated, async (req, res) => {
+  // Finding all groups to join
+  const dbGroups = await db.Group.findAll({});
+  // Find all groups associated with this user
+  // const dbUserGroup = await db.GroupUser.findAll({
+  //   where: req.user.id
+  // })
 
-    res.render('index', {
-      // You can render any other information here
-      msg: 'Welcome to the HomePage!',
-      groups: dbGroups
-    });
+  res.render('index', {
+    // You can render any other information here
+    msg: 'Welcome to the HomePage!',
+    groups: dbGroups
+  });
 })
 
 // Route for login page
 htmlRoutes.get('/login', async (req, res) => {
- res.render('login')
+  res.render('login')
 })
 // Route for signup page
-htmlRoutes.get('/signup', async (req,res) => {
+htmlRoutes.get('/signup', async (req, res) => {
   res.render('signup')
 })
 
@@ -60,9 +60,9 @@ htmlRoutes.get('/group/:id', async (req, res) => {
     }
   });
   // This is the returned data
-  console.log(dbGroups.toJSON());
-  console.log(dbPosts);
-  console.log(dbMembers);
+  // console.log(dbGroups.toJSON());
+  // console.log(dbPosts);
+  // console.log(dbMembers);
   // reference to specific handlebars page referring to group id above
   res.render('group', {
     group: dbGroups,
@@ -92,8 +92,8 @@ htmlRoutes.get('/post/:id', async (req, res) => {
     content: dbPosts,
     feedback: dbFeedback
   });
-  console.log(dbPosts);
-  console.log(dbFeedback);
+  // console.log(dbPosts);
+  // console.log(dbFeedback);
 });
 
 module.exports = htmlRoutes;

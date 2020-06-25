@@ -27,6 +27,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 // Handlebars
 app.engine(
   'handlebars',
@@ -50,6 +51,9 @@ if (process.env.NODE_ENV === 'test') {
 // Routes
 app.use(routes);
 
+// Public folder for assets
+app.use(express.static(__dirname + '/public')); 
+
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(() => {
   app.listen(PORT, () => {
@@ -60,5 +64,8 @@ db.sequelize.sync(syncOptions).then(() => {
     );
   });
 });
+
+
+
 
 module.exports = app;
