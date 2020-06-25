@@ -74,6 +74,7 @@ const handleFormSubmit = function (event) {
     window.alert('You must enter an example text and description!');
     return;
   }
+  
 
   API.saveExample(example).then(function () {
     refreshExamples();
@@ -98,3 +99,7 @@ const handleDeleteBtnClick = function () {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
 $exampleList.on('click', '.delete', handleDeleteBtnClick);
+  $createBtn.on('click', createGroup);
+  $createPostBtn.on("click", createPost);
+
+

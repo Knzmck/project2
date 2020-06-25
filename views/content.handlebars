@@ -38,17 +38,48 @@
             <li> {{this.comment}}</li>
             <li> {{this.createdAt}}</li>
             <li> {{this.postId}}</li>
-          {{!-- <!--Customize title of comments...totally a last minute thought--> --}}
-            <div>
+            {{!-- <!--Customize title of comments...totally a last minute thought--> --}}
+            {{!-- <div>
               <p>@date @timestamp <strong>group-attendee</strong>: Comment Here </p>
-            </div>
+            </div> --}}
             {{!-- <!--{{image.source}}--> --}}
+          </div>
+          {{/each}}
+          <br>
+          <br>
         </div>
-        {{/each}}
+        <h3>Post a comment: </h3>
+        {{!-- Form for group create --}}
+        <form id="feedback"  >
+      <div class="form-group">
+
+            <label for="authorName">Author Name</label>
+            <input type="text" id="authorName-input" class="form-control" aria-describedby="example-text"
+              placeholder="Author Name Here">
       </div>
+      <div class="form-group"></div>
+          <label for = "helpful">Helpful? </label>
+          <input type="number" id="helpful-input" class="form-control" aria-describedby="example-text"
+            placeholder="Chose 0 for no and 1 for yes!">
+      </div>
+      <div class="form-group"></div>
+          <label for = "comment">Comment </label>
+          <input type="text" id="comment-input" class="form-control" aria-describedby="example-text"
+            placeholder="Write a comment here! ">
+      </div>
+      <div class="form-group">
+          <label for = "form-postId">Post ID </label>
+          <input type="number" id="postId-input" class="form-control" aria-describedby="example-text"
+            placeholder="">
+      </div>
+      <button type="submit"  style="background-color: green;">Create</button>
+      </form>
+
       <a href="/">← Back To Home</a>
     </div>
   </div>
 </div>
 </div>
 </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/content.js"></script>
