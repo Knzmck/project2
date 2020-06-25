@@ -1,0 +1,173 @@
+﻿@charset "utf-8";
+@import "../node_modules/bulma/bulma.sass";
+@import url("https://use.typekit.net/izj2vmx.css");
+
+
+// Unique Variables
+$darkest-blue: #173440;
+$darker-blue: #315259;
+$greyish-blue: #65858C;
+$grey-blue: #9FBCBF;
+$off-white: #F0F2F2;
+
+
+
+
+// Bulma Variables
+$body-background-color: $darkest-blue; 
+$body-color: $off-white;
+/*$button-background-color: $greyish-blue;
+$button-border-color: none;
+$button-hover-color:white; 
+$button-hover-color: $grey-blue;*/
+$family-primary: 'refrigerator-deluxe', sans-serif;
+$primary-weight: 300; 
+$title-family: 'refrigerator-deluxe', sans-serif;
+$title-weight: 900;
+$subtitle-family: 'refrigerator-deluxe', sans-serif; 
+$subtitle-weight: 400; 
+$navbar-background-color: $off-white;
+$navbar-item-img-max-height: 7em;
+$footer-background-color: $darker-blue; 
+
+
+// Nitty gritty details
+.logo {
+    font-family: $title-family; 
+    font-weight: $title-weight; 
+}
+
+nav {
+    text-align: center;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .navbar-brand {
+        margin: auto;
+        display: inline-flex;
+
+        #homelink {
+            display: flex;
+            padding: 0;
+            margin: auto 0;
+
+            img {
+                margin: auto 0;
+            }
+
+            .logo {
+                font-size: 4.5em;
+                margin: auto 0;
+                padding-left: 5px;
+            }
+        }
+
+        .buttons {
+            margin: auto 0;
+            margin-left: 2%;
+
+            .button {
+                background: $darkest-blue;
+                color: $off-white;
+                box-shadow: none;
+            }
+
+            :hover {
+                background: $darker-blue;
+            }
+        }
+    }
+}
+
+
+section {
+    margin: 0 auto; 
+    width: 100%; 
+    font-size: 150%; 
+   display: inline; 
+   .subtitle {
+       color: $off-white; 
+       font-size: 3em; 
+   }
+   .field {
+       color: $off-white; 
+       label {
+           color: $off-white
+       }
+   }
+      
+}
+
+#backbtn {
+    margin: 1em; 
+}
+
+.card {
+    background:  rgba(0, 0, 0, 0.40); 
+    padding: 1.5em; 
+    border-radius: 5px; 
+    color: $off-white; 
+    .title {
+        color: $off-white;
+        font-size: 3em;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    strong {
+        color: $off-white;
+        margin-top: 1px;
+        padding-top: 1px;
+    }
+
+        .label {
+            color: $off-white;
+            font-size: 1.5em; 
+        }
+        .subtitle {
+            padding-top: 1em; 
+            padding-bottom: 1px; 
+            margin-bottom: 0; 
+            font-size: x-large; 
+            color: $off-white;
+        }
+        .button {
+            margin-top: 1em; 
+        }
+}
+
+.footer {
+    background: $darker-blue;     
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    padding: 1em 1px 1em 1px; 
+    img {
+        margin: 0 auto; 
+        width: 3%;
+        padding: 0; 
+    }
+    h1 {
+        padding: 0; 
+        margin: 0; 
+    }
+    .logo {
+        color: $off-white; 
+        margin: 0; 
+        font-size: 3em; 
+        padding: 0; 
+
+       }
+}
+
+// Import Bulma Variables
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";

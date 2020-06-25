@@ -1,17 +1,16 @@
 {{!-- SINGLE Group Page --}}
 {{!-- After user clicks link to enter group this is the group page --}}
 <div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
+
+    <a href="/" class="button" id="backbtn">← Back To Groups</a>
+        <div class="card">
           {{!-- Button to User send back to Groups --}}
-          <a href="/">← Back To Groups</a>
+          
           {{!-- variable to connect to a db = AuthorsName,GroupTitle,UserContent,GroupDate,MemberCount, groupPost --}}
           {{!-- Group page will display the  AuthorsName = Authors name, Amount of content inside = total number of posts in group
           groupDate= Date the group was created. memberCount = Total number of members, GroupPost = post inside this group --}}
 
-          <h5 class="card-title">{{group.name}}</h5>
+          <h5 class="title">{{group.name}}jlfkgj</h5>
           {{!-- <p>Author of group is owner
             <strong>Owner</strong>: {{this.owner}}</p>
           <p> --}}
@@ -23,33 +22,35 @@
 
           {{!-- Lists of post in group either a single line format or with individual squares similar to pintrest(each individual content gets it's own square (padding to take up space.) --}}
           {{!--Either a straight list starting from top to bottom or 2 colums across and multiple rows down --}}
-          <h3>Create your own Post:</h3>
-          {{!-- <p>{{group.id}} hello</p> --}}
+
+          <h3 class="subtitle">Create your own Post:</h3>
           {{!-- Form for group create --}}
-          <form id="create-button-group" class="clearfix mb-4"  method="POST">
-              
-              <div class="form-group">
+          <form id="create-button-group" class="control" action="../public/js/index.js" method="POST">
 
-              
-              <input type="number" id="postGroupID" class="form-control" placeholder="Group ID" value={{{group.id}}} readonly >
-              {{!-- value={{group.id}} readonly --}}
+            <div class="field">
+=======
 
-              <label for="postTitle">Post Title</label>
-              <input type="text" id="postTitle" class="form-control" placeholder="Post Title">
+              <label for="postTitle" class="label" >Post Title</label>
+              <input type="text" id="postTitle" class="input" placeholder="Post Title">
 
-              <label for="postAuthor">Post Author:</label>
-              <input type="text" id="authorName" class="form-control" placeholder="Author Name">
+              <label for="postAuthor" class="label" >Post Author:</label>
+              <input type="text" id="authorName" class="input" placeholder="Author Name">
 
-              <label for="postTopic">Post Topic:</label>
-              <input type="text" id="postTopic" class="form-control" placeholder="Post Topic">
+              <label for="postTopic" class="label">Post Topic:</label>
+              <input type="text" id="postTopic" class="input" placeholder="Post Topic">
 
-              <input type="number" id="postId" class="form-control" placeholder="Post ID" >
-              {{!-- value={{ groupUser.UserId}} readonly --}}
 
-              <label for="postContent">Post Content:</label>
-              <input type="text" id="postContent" class="form-control" placeholder="Post Content">
-              
-              <button type="submit" id="createPost-button" style="background-color: green;">Create</button>
+              <label for="postContent" class="label">Post Content:</label>
+              <input type="text" id="postContent" class="input" placeholder="Post Content">
+
+              {{!-- <label for="postContent">User ID:</label>
+              <input type="text" id="postContent" class="form-control" placeholder="User ID">
+              <label for="postContent">Group ID:</label>
+              <input type="text" id="postContent" class="form-control" placeholder="Post Content"> --}}
+
+              <button type="submit" id="createPost-button" class="button is-medium">Create</button>
+=======
+
             </div>
           </form>
 
@@ -72,8 +73,7 @@
           {{!-- <a href="/">← Back To Home</a> --}}
         </div>
       </div>
-    </div>
-  </div>
-</div>
+
+  
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
