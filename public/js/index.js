@@ -184,7 +184,14 @@ $(document).ready(function () {
       groupId: groupId
     });
   }
+  
 
+
+// Add event listeners to the submit and delete buttons
+$submitBtn.on('click', handleFormSubmit);
+$exampleList.on('click', '.delete', handleDeleteBtnClick);
   $createBtn.on('click', createGroup);
-  $createPostBtn.on('click', createPost);
+  $createPostBtn.on("click", createPost);
+
+
 });
