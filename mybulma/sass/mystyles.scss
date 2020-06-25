@@ -28,9 +28,14 @@ $subtitle-family: 'refrigerator-deluxe', sans-serif;
 $subtitle-weight: 400; 
 $navbar-background-color: $off-white;
 $navbar-item-img-max-height: 7em;
+$footer-background-color: $darker-blue; 
 
 
 // Nitty gritty details
+.logo {
+    font-family: $title-family; 
+    font-weight: $title-weight; 
+}
 
 nav {
     text-align: center;
@@ -51,7 +56,7 @@ nav {
                 margin: auto 0;
             }
 
-            .title {
+            .logo {
                 font-size: 4.5em;
                 margin: auto 0;
                 padding-left: 5px;
@@ -86,19 +91,75 @@ section {
        font-size: 3em; 
    }
    .field {
-       color: white; 
+       color: $off-white; 
        label {
            color: $off-white
        }
    }
       
 }
-// Media queries
 
-    // Mobile
- 
+#backbtn {
+    margin: 1em; 
+}
 
+.card {
+    background:  rgba(0, 0, 0, 0.40); 
+    padding: 1.5em; 
+    border-radius: 5px; 
+    color: $off-white; 
+    .title {
+        color: $off-white;
+        font-size: 3em;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
 
+    strong {
+        color: $off-white;
+        margin-top: 1px;
+        padding-top: 1px;
+    }
+
+        .label {
+            color: $off-white;
+            font-size: 1.5em; 
+        }
+        .subtitle {
+            padding-top: 1em; 
+            padding-bottom: 1px; 
+            margin-bottom: 0; 
+            font-size: x-large; 
+            color: $off-white;
+        }
+        .button {
+            margin-top: 1em; 
+        }
+}
+
+.footer {
+    background: $darker-blue;     
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    padding: 1em 1px 1em 1px; 
+    img {
+        margin: 0 auto; 
+        width: 3%;
+        padding: 0; 
+    }
+    h1 {
+        padding: 0; 
+        margin: 0; 
+    }
+    .logo {
+        color: $off-white; 
+        margin: 0; 
+        font-size: 3em; 
+        padding: 0; 
+
+       }
+}
 
 // Import Bulma Variables
 @import "../node_modules/bulma/sass/utilities/_all.sass";

@@ -7485,6 +7485,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 $button-border-color: none;
 $button-hover-color:white; 
 $button-hover-color: $grey-blue;*/
+.logo {
+  font-family: "refrigerator-deluxe", sans-serif;
+  font-weight: 900; }
+
 nav {
   text-align: center;
   width: 100%;
@@ -7499,7 +7503,7 @@ nav {
       margin: auto 0; }
       nav .navbar-brand #homelink img {
         margin: auto 0; }
-      nav .navbar-brand #homelink .title {
+      nav .navbar-brand #homelink .logo {
         font-size: 4.5em;
         margin: auto 0;
         padding-left: 5px; }
@@ -7522,9 +7526,57 @@ section {
     color: #F0F2F2;
     font-size: 3em; }
   section .field {
-    color: white; }
+    color: #F0F2F2; }
     section .field label {
       color: #F0F2F2; }
+
+#backbtn {
+  margin: 1em; }
+
+.card {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1.5em;
+  border-radius: 5px;
+  color: #F0F2F2; }
+  .card .title {
+    color: #F0F2F2;
+    font-size: 3em;
+    margin-bottom: 0;
+    padding-bottom: 0; }
+  .card strong {
+    color: #F0F2F2;
+    margin-top: 1px;
+    padding-top: 1px; }
+  .card .label {
+    color: #F0F2F2;
+    font-size: 1.5em; }
+  .card .subtitle {
+    padding-top: 1em;
+    padding-bottom: 1px;
+    margin-bottom: 0;
+    font-size: x-large;
+    color: #F0F2F2; }
+  .card .button {
+    margin-top: 1em; }
+
+.footer {
+  background: #315259;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1em 1px 1em 1px; }
+  .footer img {
+    margin: 0 auto;
+    width: 3%;
+    padding: 0; }
+  .footer h1 {
+    padding: 0;
+    margin: 0; }
+  .footer .logo {
+    color: #F0F2F2;
+    margin: 0;
+    font-size: 3em;
+    padding: 0; }
 
 @keyframes spinAround {
   from {
