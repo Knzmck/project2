@@ -1,6 +1,6 @@
 # **Squid-Stack a Group Management/Hosting Web-App**
 
-by Kenzie Richter, Angle Shultz, Joe Hernandez David Yennerell Started 06/15/20
+by Kenzie Richter, Angel Schultz, Joe Hernandez David Yennerell Started 06/15/20
 ![Licenses](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## **Description**
