@@ -1,3 +1,4 @@
+{{!-- SINGLE Group Page --}}
 {{!-- After user clicks link to enter group this is the group page --}}
 <div class="container">
   <div class="row">
@@ -20,8 +21,7 @@
             {{!-- Description of the group --}}
             <strong>Description:</strong> {{group.description}}</p>
 
-          {{!-- Lists of post in group either a single line format or with individual squares similar to pintrest(each individual content gets it's own square 
-            with padding to take up space.) --}}
+          {{!-- Lists of post in group either a single line format or with individual squares similar to pintrest(each individual content gets it's own square (padding to take up space.) --}}
           {{!--Either a straight list starting from top to bottom or 2 colums across and multiple rows down --}}
           <h3>Create your own Post:</h3>
           {{!-- Form for group create --}}
@@ -31,7 +31,6 @@
               <label for="postTitle">Post Title</label>
               <input type="text" id="postTitle" class="form-control" aria-describedby="example-text"
                 placeholder="Post Title">
-
 
               <label for="postAuthor">Post Author:</label>
               <input type="text" id="postAuthor" class="form-control" aria-describedby="example-text"
@@ -45,12 +44,23 @@
               <input type="text" id="postContent" class="form-control" aria-describedby="example-text"
                 placeholder="Post Content">
 
+              <label for="postContent">User ID:</label>
+              <input type="text" id="postContent" class="form-control" aria-describedby="example-text"
+                placeholder="Post Content">
+              <label for="postContent">Group ID:</label>
+              <input type="text" id="postContent" class="form-control" aria-describedby="example-text"
+                placeholder="Post Content">
 
               <button type="submit" id="createPost-button" style="background-color: green;">Create</button>
             </div>
+            
             {{#each posts}}
             <li data-id="{{this.id}}" class="list-post-item">
-              <a href="group/{{this.id}}">{{this.name}}</a>
+              {{!-- <a href="posts/{{this.id}}">{{this.postTitle}}</a> --}}
+              <p>{{this.postTitle}}</p>
+              <p>{{this.postAuthor}}</p>
+              <p>{{this.postTopic}}</p>
+              <p>{{this.postContent}}</p>
               <p>{{this.content}}</p>
             </li>
 
@@ -58,12 +68,7 @@
             {{!-- This is an example post --}}
             <button>Create Post</button>
             {{!-- This will be the div with the posts inside. Mobile responsive and side by side--}}
-            <div style="border-style:solid">
-              <h1>Hey SpaceFam!</h1>
 
-              <p> Welcome to the group if you have any questions just ask! </p>
-              <button id="commentBtn">Comment</button><button id="likeBtn">Like</button>
-            </div>
             {{!-- Button to User send back to Groups --}}
             {{!-- <a href="/">← Back To Home</a> --}}
         </div>
@@ -72,4 +77,4 @@
   </div>
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/groups.js"></script>
+<script src="/js/index.js"></script>
