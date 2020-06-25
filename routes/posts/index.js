@@ -14,7 +14,7 @@ postRoutes
   })
 
   .post(async (req, res) => {
-    console.log(req.body)
+    
     const dbPosts = await Post.create(req.body);
     res.json(dbPosts);
   });
@@ -39,7 +39,7 @@ postRoutes
 postRoutes
   .route('/newpost')
   .post(async (req, res) => {
-    console.log(req.body)
+    
     const dbPosts = await Post.create(req.body);
     res.json(dbPosts);
   });
