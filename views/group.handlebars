@@ -25,52 +25,48 @@
           {{!--Either a straight list starting from top to bottom or 2 colums across and multiple rows down --}}
           <h3>Create your own Post:</h3>
           {{!-- Form for group create --}}
-          <form id="create-button-group" class="clearfix mb-4" action="POST">
+          <form id="create-button-group" class="clearfix mb-4" action="../public/js/index.js" method="POST">
+
             <div class="form-group">
 
               <label for="postTitle">Post Title</label>
-              <input type="text" id="postTitle" class="form-control" aria-describedby="example-text"
-                placeholder="Post Title">
+              <input type="text" id="postTitle" class="form-control" placeholder="Post Title">
 
               <label for="postAuthor">Post Author:</label>
-              <input type="text" id="postAuthor" class="form-control" aria-describedby="example-text"
-                placeholder="Author Name">
+              <input type="text" id="authorName" class="form-control" placeholder="Author Name">
 
               <label for="postTopic">Post Topic:</label>
-              <input type="text" id="postTopic" class="form-control" aria-describedby="example-text"
-                placeholder="Post Topic">
+              <input type="text" id="postTopic" class="form-control" placeholder="Post Topic">
 
               <label for="postContent">Post Content:</label>
-              <input type="text" id="postContent" class="form-control" aria-describedby="example-text"
-                placeholder="Post Content">
+              <input type="text" id="postContent" class="form-control" placeholder="Post Content">
 
-              <label for="postContent">User ID:</label>
-              <input type="text" id="postContent" class="form-control" aria-describedby="example-text"
-                placeholder="Post Content">
+              {{!-- <label for="postContent">User ID:</label>
+              <input type="text" id="postContent" class="form-control" placeholder="User ID">
               <label for="postContent">Group ID:</label>
-              <input type="text" id="postContent" class="form-control" aria-describedby="example-text"
-                placeholder="Post Content">
+              <input type="text" id="postContent" class="form-control" placeholder="Post Content"> --}}
 
               <button type="submit" id="createPost-button" style="background-color: green;">Create</button>
             </div>
-            
-            {{#each posts}}
-            <li data-id="{{this.id}}" class="list-post-item">
-              {{!-- <a href="posts/{{this.id}}">{{this.postTitle}}</a> --}}
-              <p>{{this.postTitle}}</p>
-              <p>{{this.postAuthor}}</p>
-              <p>{{this.postTopic}}</p>
-              <p>{{this.postContent}}</p>
-              <p>{{this.content}}</p>
-            </li>
+          </form>
 
-            {{/each}}
-            {{!-- This is an example post --}}
-            <button>Create Post</button>
-            {{!-- This will be the div with the posts inside. Mobile responsive and side by side--}}
+          {{#each posts}}
+          <li data-id="{{this.id}}" class="list-post-item">
+            {{!-- <a href="posts/{{this.id}}">{{this.postTitle}}</a> --}}
+            <p>{{this.postTitle}}</p>
+            <p>{{this.authorName}}</p>
+            <p>{{this.postTopic}}</p>
+            <p>{{this.postContent}}</p>
+            <p>{{this.content}}</p>
+          </li>
 
-            {{!-- Button to User send back to Groups --}}
-            {{!-- <a href="/">← Back To Home</a> --}}
+          {{/each}}
+          {{!-- This is an example post --}}
+
+          {{!-- This will be the div with the posts inside. Mobile responsive and side by side--}}
+
+          {{!-- Button to User send back to Groups --}}
+          {{!-- <a href="/">← Back To Home</a> --}}
         </div>
       </div>
     </div>
