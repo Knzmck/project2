@@ -5,7 +5,7 @@ by Kenzie Richter, Angel Schultz, Joe Hernandez David Yennerell Started 06/15/20
 
 ## **Description**
 
-(Heroku link here)
+(https://squidstack.herokuapp.com/)
 An App for groups of people to discuss material or topics related to them.With Squid Stack you can populate your chosen group page with custom content or follow a certain group that will feed you the information you need to succeed.
 
 ## **_Table of Contents_**
